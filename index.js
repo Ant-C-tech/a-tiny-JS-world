@@ -130,6 +130,7 @@ const inhabitants = [dog, cat, woman, man]
    print('human; <strong>John</strong>; male; 2; 2; <em>Hello world!</em>; Rex, Tom, Jenny');
    print('human; <strong>John</strong>; male; 2; 2; <em>Hello world!</em>; Rex, Tom, Jenny', 'div');
    */
-for (const item of inhabitants) {
+
+inhabitants.forEach((item) => {
    print(createGreetingContent(item), 'div')
-}
+})
