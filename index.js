@@ -58,12 +58,12 @@ function createGreetingContent(obj) {
       friends: 'I have friend %',
    };
 
-   const res = Object.keys(template).map((key) => {
+   const greeting = Object.keys(template).map((key) => {
       if (obj[key] && template[key]) {
          return template[key].replace('%', obj[key]);
       };
-   });
-   const greeting = res.filter(item => item != undefined).join('. ');
+   }).filter(item => item != undefined).join('. ');
+
    return `${greeting}.`;
 };
 
