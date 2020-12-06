@@ -37,18 +37,16 @@ const woman = {
 };
 
 const man = {
+   friends: ['Spike', 'Tom'],
    species: 'human',
    name: 'John',
-   gender: 'male',
    legs: 2,
    hands: 2,
    saying: 'Hi, how are you?',
-   friends: ['Spike', 'Tom'],
+   gender: 'male',
 };
 
 function createGreetingContent(obj) {
-
-   let content = '';
 
    const propPrefixes = {
       species: 'I am a %. ',
@@ -60,20 +58,20 @@ function createGreetingContent(obj) {
       friends: 'I have friend %. ',
    };
 
-   Object.keys(obj).forEach((key) => {
+  const greeting = Object.keys(propPrefixes).map((key) => {
       if (Array.isArray(obj[key])) {
          for (const item of obj[key]) {
-            content += propPrefixes[key].replace('%', item);
+            return propPrefixes[key].replace('%', item);
          };
       } else if (obj[key] && propPrefixes[key]) {
-         content += propPrefixes[key].replace('%', obj[key]);
+         return propPrefixes[key].replace('%', obj[key]);
       };
    });
-   
-   return content.trim();
+
+   return greeting.join('');
 };
 
-const inhabitants = [dog, cat, woman, man];
+const inhabitants = [dog, cat, woman, man,];
 
 // ======== OUTPUT ========
 /* Use print(message) for output.
