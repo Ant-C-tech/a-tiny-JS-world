@@ -49,6 +49,7 @@ class Dog extends Animal {
         super(gender, legs, name, friends);
         this.species = 'dog';
         this.saying = 'Woof-Woof!';
+        this.legs = 4;
     };
 
     getVoice() {
@@ -64,6 +65,7 @@ class Cat extends Animal {
         super(gender, legs, name, friends);
         this.species = 'cat';
         this.saying = 'Meow-Meow!';
+        this.legs = 4;
     };
 
     getVoice() {
@@ -80,6 +82,7 @@ class Human extends Animal {
         this.saying = saying;
         this.species = 'human';
         this.hands = 2;
+        this.legs = 2;
     };
 
     getVoice() {
@@ -92,10 +95,10 @@ class Human extends Animal {
     };
 }
 
-const dog = new Dog('male', 4, 'Spike', ['John']);
-const cat = new Cat('male', 4, 'Tom', ['John']);
-const woman = new Human('Nice to meet you!', 'female', 2, 'Jane');
-const man = new Human('Hi, how are you?', 'male', 2, 'John', ['Spike', 'Tom']);
+const dog = new Dog('male', 'Spike', ['John']);
+const cat = new Cat('male', 'Tom', ['John']);
+const woman = new Human('Nice to meet you!', 'female', 'Jane');
+const man = new Human('Hi, how are you?', 'male', 'John', ['Spike', 'Tom']);
 
 const inhabitants = [dog, cat, woman, man];
 
