@@ -16,11 +16,9 @@ class Inhabitant {
     };
 
     getVoice() {
-        let pluralEnding;
-        (this.friends && this.friends.length > 1) ? pluralEnding = 's': pluralEnding = '';
         return (this.friends) ? [
             this.templete,
-            `I have friend${pluralEnding}: ${this.friends.join(', ')}`
+            `I have friend${(this.friends.length > 1) ? 's' : ''}: ${this.friends.join(', ')}`
         ].join('. ') : [
             this.templete,
             'I am looking for friends'
