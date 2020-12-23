@@ -29,76 +29,73 @@ class Inhabitant {
 };
 
 class Animal extends Inhabitant {
-    constructor(gender, name, friends) {
+    constructor(gender, legs, name, friends) {
         super(name, friends);
         this.gender = gender;
+        this.legs = legs;
     };
 
     getVoice() {
         return [
+            `I have ${this.legs} legs`,
+            `My gender is ${this.gender}`,
             super.getVoice(),
-            `My gender is ${ this.gender }`
         ].join('. ');
     };
 }
 
 class Dog extends Animal {
-    constructor(gender, name, friends) {
-        super(gender, name, friends);
+    constructor(gender, legs, name, friends) {
+        super(gender, legs, name, friends);
         this.species = 'dog';
         this.saying = 'Woof-Woof!';
-        this.legs = 4;
     };
 
     getVoice() {
         return [`I am a ${this.species}`,
             super.getVoice(),
-            `I have ${this.legs} legs`,
             `I want to say you: "${this.saying}".`
         ].join('. ');
     };
 }
 
 class Cat extends Animal {
-    constructor(gender, name, friends) {
-        super(gender, name, friends);
+    constructor(gender, legs, name, friends) {
+        super(gender, legs, name, friends);
         this.species = 'cat';
         this.saying = 'Meow-Meow!';
-        this.legs = 4;
     };
 
     getVoice() {
         return [`I am a ${this.species}`,
             super.getVoice(),
-            `I have ${this.legs} legs`,
             `I want to say you: "${this.saying}".`
         ].join('. ');
     };
 }
 
 class Human extends Animal {
-    constructor(saying, gender, name, friends) {
-        super(gender, name, friends);
+    constructor(saying, gender, legs, name, friends) {
+        super(gender, legs, name, friends);
         this.saying = saying;
         this.species = 'human';
         this.hands = 2;
-        this.legs = 2;
     };
 
     getVoice() {
         return [
             `I am a ${this.species}`,
+            `I have ${this.hands} hands`,
             super.getVoice(),
-            `I have ${this.legs} legs and ${this.hands} hands`,
             `I want to say you: "${this.saying}".`
         ].join('. ');
     };
 }
 
-const dog = new Dog('male', 'Spike', ['John']);
-const cat = new Cat('male', 'Tom', ['John']);
-const woman = new Human('Nice to meet you!', 'female', 'Jane');
-const man = new Human('Hi, how are you?', 'male', 'John', ['Spike', 'Tom']);
+const dog = new Dog('male', 4, 'Spike', ['John']);
+const cat = new Cat('male', 4, 'Tom', ['John']);
+const woman = new Human('Nice to meet you!', 'female', 2, 'Jane');
+const man = new Human('Hi, how are you?', 'male', 2, 'John', ['Spike', 'Tom']);
 
 const inhabitants = [dog, cat, woman, man];
 
