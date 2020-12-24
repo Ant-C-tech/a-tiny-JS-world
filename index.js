@@ -26,7 +26,7 @@ class Inhabitant {
     getVoice() {
         return (this.friends) ? [
             this.templete,
-            `I have friend${(this.friends) ? 's' : ''}: ${this.friends.join(', ')}`
+            `I have friend${(this.friends.length > 1) ? 's' : ''}: ${this.friends.join(', ')}`
         ].join('. ') : [
             this.templete,
             'I am looking for friends'
